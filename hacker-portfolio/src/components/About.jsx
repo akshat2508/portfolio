@@ -10,7 +10,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-16 mt-20 flex flex-col justify-between items-center">
-      <h2 className="text-2xl font-semibold neon-text">About Me</h2>
+      <h2 className="text-4xl font-semibold neon-text">About Me</h2>
       <div className="mt-6 grid md:grid-cols-2 gap-6">
         <div className="mt-4 text-slate-300">
           <p>I'm a full-stack engineer with a soft spot for clean UX and fast apps. I enjoy building distributed systems and delightful frontends.</p>

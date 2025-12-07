@@ -33,7 +33,7 @@ export default function Contact() {
     {
       icon: <FiPhone />,
       label: "WhatsApp",
-      link: "https://wa.me/919596571744", // ← replace with your number
+      link: "https://wa.me/919596571744",
     },
     {
       icon: <FiMail />,
@@ -43,66 +43,78 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 flex flex-col items-center">
+    <section id="contact" className="py-20">
       <h2 className="text-2xl neon-text font-semibold text-center">Contact</h2>
 
-      {/* FORM */}
-      <div className="mt-10 w-full max-w-xl card p-6 rounded-2xl border border-[#112226]">
-        <h3 className="text-xl text-electric font-semibold text-center">Send me a message</h3>
+      <div className="mt-12 max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        
+        {/* LEFT — MESSAGE FORM */}
+        <div className="card p-6 rounded-2xl border border-[#112226]">
+          <h3 className="text-xl text-electric font-semibold text-center mb-4">
+            Send me a message
+          </h3>
 
-        <form onSubmit={submit} className="mt-6 grid gap-4">
-          <input
-            className="p-3 rounded-md bg-[#071018] border border-[#112226]"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            required
-          />
+          <form onSubmit={submit} className="grid gap-4">
+            <input
+              className="p-3 rounded-md bg-[#071018] border border-[#112226]"
+              placeholder="Your Name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              required
+            />
 
-          <input
-            className="p-3 rounded-md bg-[#071018] border border-[#112226]"
-            placeholder="Your Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            required
-          />
+            <input
+              className="p-3 rounded-md bg-[#071018] border border-[#112226]"
+              placeholder="Your Email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              required
+            />
 
-          <textarea
-            className="p-3 rounded-md bg-[#071018] border border-[#112226]"
-            rows={6}
-            placeholder="Your Message"
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            required
-          />
+            <textarea
+              className="p-3 rounded-md bg-[#071018] border border-[#112226]"
+              rows={6}
+              placeholder="Your Message"
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              required
+            />
 
-          <button className="px-5 py-3 neon-text glow-btn rounded-full w-fit mx-auto hover:scale-115 duration-200">
-            Send Message
-          </button>
+            <button className="px-5 py-3 neon-text glow-btn rounded-full w-fit mx-auto hover:scale-110 transition-all">
+              Send Message
+            </button>
 
-          {s && (
-            <div className="text-sm text-green-400 text-center">
-              Email draft opened — check your mail.
-            </div>
-          )}
-        </form>
-
-        {/* SOCIAL BUTTONS UNDER FORM */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-4 justify-items-center">
-          {socials.map((s, idx) => (
-            <a
-              key={idx}
-              href={s.link}
-              target="_blank"
-              className="flex flex-col items-center gap-2 p-3 rounded-full bg-[#071018]
-                         border border-[#112226] text-slate-300 text-sm hover:scale-105
-                         transition-all w-28 text-center"
-            >
-              <div className="text-neon text-lg">{s.icon}</div>
-              {s.label}
-            </a>
-          ))}
+            {s && (
+              <div className="text-sm text-green-400 text-center">
+                Email draft opened — check your mail.
+              </div>
+            )}
+          </form>
         </div>
+
+        {/* RIGHT — SOCIAL LINKS */}
+        <div className="card p-6 rounded-2xl border border-[#112226]">
+          <h3 className="text-xl text-electric font-semibold text-center mb-4">
+            Connect with me
+          </h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-5 mt-4">
+            {socials.map((s, idx) => (
+              <a
+                key={idx}
+                href={s.link}
+                target="_blank"
+                className="flex flex-col items-center gap-2 p-4 rounded-xl 
+                           bg-[#071018] border border-[#112226]
+                           text-slate-300 text-sm hover:scale-105 transition-all"
+              >
+                <div className="text-neon text-2xl">{s.icon}</div>
+                <span>{s.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
