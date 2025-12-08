@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-
+import profile from '../assets/profile.png'
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "projects", label: "Projects" },
-    { id: "exp", label: "Experience" },
+    { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -22,7 +22,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-3 cursor-pointer" onClick={()=>scrollTo("home")}>
           <div className="w-10 h-10 rounded-full neon-ring flex items-center justify-center">
-            <span className="text-sm neon-text font-bold">AP</span>
+            {/* <span className="text-sm neon-text font-bold">AP</span> */}
+            <img src={profile} alt="" className="rounded-2xl"/>
           </div>
           <div>
             <div className="text-sm text-slate-300">Akshat Paul</div>
@@ -47,7 +48,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#05060a]/90 backdrop-blur-sm py-4">
+        <div className="md:hidden bg-bg/90 backdrop-blur-sm py-4">
           <div className="flex flex-col items-center gap-4">
             {links.map((l) => (
               <button key={l.id} onClick={() => scrollTo(l.id)} className="text-slate-200">{l.label}</button>

@@ -114,7 +114,7 @@ export default function SkillMapPro() {
             fill="#7df9ff"
             className="font-mono"
           >
-            AKSHAT • PRO DEV
+            AKSHAT • DEV
           </text>
 
           {/* CONNECTORS */}

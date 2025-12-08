@@ -47,9 +47,12 @@ export default function TerminalPro() {
   const knownCommands = Object.keys(COMMANDS).concat(["open", "clear", "resume"]);
 
   useEffect(() => {
-    inputRef.current?.focus();
-    scrollToBottom();
-  }, []);
+  setTimeout(() => {
+    inputRef.current?.focus({ preventScroll: true });
+  }, 300);
+  scrollToBottom();
+}, []);
+
 
   const push = (line) =>
     setHistory((h) => [...h, { id: Date.now() + Math.random(), ...line }]);
