@@ -66,9 +66,9 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7 }}
-          className="flex justify-center md:justify-end"
+          className="flex mt-2 mr-6 justify-center md:justify-end"
         >
-          <div className="w-100 h-130 rounded-2xl card neon-ring p-4 animate-[pulseNeon_3s_ease-in-out_infinite]">
+          <div className="w-80 h-100  rounded-2xl card neon-ring p-4 animate-[pulseNeon_3s_ease-in-out_infinite]">
             <img 
               src={avatar} 
               alt="Akshat Paul" 
