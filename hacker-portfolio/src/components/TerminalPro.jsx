@@ -29,7 +29,10 @@ Pascals LMS — https://github.com/akshat2508/pascals-institute`,
   certs: `Udemy Certificates:
 • Flutter Bootcamp
 • Node.js Guide
-• ML A-Z`
+• ML A-Z`,
+
+  contact: `akshatpaul2006@gmail.com
+  +91 9596571744`
 };
 
 export default function TerminalPro() {
